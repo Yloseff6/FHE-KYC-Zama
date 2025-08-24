@@ -1,0 +1,2 @@
+web3==6.11.0
+concrete-python==1.2.0
