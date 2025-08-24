@@ -1,13 +1,12 @@
 # 🔐 FHE-KYC-Zama
 
-KYC dApp using Fully Homomorphic Encryption (Zama Concrete) & FHEVM.
+KYC dApp using Fully Homomorphic Encryption (Zama Concrete) and FHEVM.
 
-## 🧩 Features
+## Features
 
-- ✅ User data stays 100% local
-- ✅ Only encrypted boolean proof (`true/false`) is stored onchain
-- ✅ No documents or sensitive data are shared
-- ✅ Built using `concrete-python` and compatible with FHEVM
+- User documents remain private and are never transmitted or stored centrally.
+- The blockchain stores only encrypted boolean proofs of KYC completion.
+- Uses the `concrete-python` library by Zama.
+- Smart contract in Solidity for deployment on FHEVM.
 
-## 🛠 Structure
-
+## Project Structure
