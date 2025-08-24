@@ -1,2 +1,14 @@
-# Auto detect text files and perform LF normalization
+# Normalize line endings for all text files
 * text=auto
+
+# Explicitly set common source code extensions as text
+*.sol text
+*.py text
+*.md text
+*.json text
+
+# Binary files (не трогать, чтобы Git не пытался конвертировать)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
