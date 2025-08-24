@@ -21,7 +21,7 @@ def main():
     with open("contracts/PrivateKYC.abi.json") as f:
         abi = json.load(f)
 
-    contract_address = "0xYourContractAddressHere"  # Заменить на реальный адрес
+    contract_address = "0xYourContractAddressHere"  # Replace with your deployed contract address
     contract = w3.eth.contract(
         address=Web3.to_checksum_address(contract_address),
         abi=abi
