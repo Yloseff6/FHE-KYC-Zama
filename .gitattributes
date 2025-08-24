@@ -7,7 +7,7 @@
 *.md text
 *.json text
 
-# Binary files (не трогать, чтобы Git не пытался конвертировать)
+# Do not modify, so Git does not try to convert these files
 *.png binary
 *.jpg binary
 *.jpeg binary
