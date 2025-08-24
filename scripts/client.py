@@ -16,22 +16,32 @@ def main():
         print("❌ Cannot connect to FHEVM node.")
         return
 
-    account = w3.eth.accounts[0]
+    try:
+        account = w3.eth.accounts[0]
+    except Exception as e:
+        print(f"❌ Unable to get accounts: {e}")
+        return
 
     with open("contracts/PrivateKYC.abi.json") as f:
         abi = json.load(f)
 
     contract_address = "0xYourContractAddressHere"  # Replace with your deployed contract address
-    contract = w3.eth.contract(
-        address=Web3.to_checksum_address(contract_address),
-        abi=abi
-    )
+
+    try:
+        contract = w3.eth.contract(
+            address=Web3.to_checksum_address(contract_address),
+            abi=abi
+        )
+    except Exception as e:
+        print(f"❌ Invalid contract address or ABI: {e}")
+        return
 
     try:
         tx_hash = contract.functions.submitProof(proof).transact({'from': account})
+        print(f"⏳ Transaction sent. TX Hash: {tx_hash.hex()}")
         receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
         if receipt.status == 1:
-            print(f"✅ Proof sent successfully. TX Hash: {tx_hash.hex()}")
+            print(f"✅ Proof submitted successfully! TX Hash: {tx_hash.hex()}")
         else:
             print(f"❌ Transaction failed. TX Hash: {tx_hash.hex()}")
     except Exception as e:
