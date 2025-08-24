@@ -6,9 +6,9 @@ This project implements a Private KYC verification system using Fully Homomorphi
 
 - `contracts/` — Solidity smart contract for proof verification
 - `scripts/` — Python scripts to generate proofs and interact with the contract
-- `fhe/` — FHE encryption logic using Zama concrete
-- `.gitignore` — ignored files configuration
-- `.gitattributes` — line endings and binary file handling
+- `tests/` — Unit tests for scripts
+- `.github/workflows/` — GitHub Actions workflows
+- `.gitignore`, `.gitattributes`, `README.md` — configuration and documentation
 
 ## Setup
 
